@@ -1,0 +1,19 @@
+<%- include('../layouts/header', { title: "Erro!" }) %>
+
+<%- include('../layouts/menu') %>
+
+<section class="section hero is-danger is-fullheight-with-navbar">
+  <div class="hero-body has-text-centered">
+    <div class="container">
+      <h1 class="title">
+        Whoops! Looks like something went wrong
+      </h1>
+      <h2 class="subtitle">
+        <%= err %>
+      </h2>
+      <a href="/checklist" class="button is-light is-medium">Go back to task list</a>
+    </div>
+  </div>
+</section>
+
+<%- include('../layouts/footer') %>

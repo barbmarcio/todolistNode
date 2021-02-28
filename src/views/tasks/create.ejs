@@ -1,0 +1,28 @@
+<%- include('../layouts/header.ejs', {title: 'Creating a new task'}) %>
+
+<%- include('../layouts/menu.ejs') %>
+
+<section class="section">
+  <div class="container">
+    <h1 class="title size-4">Creating a new task</h1>
+    
+    <form method="POST" action="/checklists/<%= checkId %>/tasks">
+      <div class="field">
+        <label class="label">Name</label>
+        <div class="control">
+          <input class="input" type="text" name="task[name]" placeholder="Lista de Tarefas"
+                  value="<%= task.name %>">
+          <% if (task.error && task.error.hasOwnProperty('name')) { %>
+            <p class="is-danger help"><$= task.error.name.message %></p>
+          <% } %>
+        </div>
+      </div>
+    
+      <button type="submit" class="button is-success">Save</button>
+      <a href="/checklists/<%= checkId %>" class="button">Cancel</a>
+    </form>
+    
+  </div>
+</section>
+
+<%- include('../layouts/footer.ejs') %>
